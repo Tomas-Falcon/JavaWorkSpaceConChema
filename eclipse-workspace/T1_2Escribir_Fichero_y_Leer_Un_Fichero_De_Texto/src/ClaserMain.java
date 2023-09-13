@@ -19,7 +19,7 @@ public class ClaserMain {
 
 		try {
 
-		  fichero = new FileWriter("C:\\Users\\Tomas\\Desktop\\carpetin\\ficherin.txt");
+		  fichero = new FileWriter("ficherin.txt");
 		  //Ubicacion
 		  
 		  escritor = new PrintWriter(fichero) ;

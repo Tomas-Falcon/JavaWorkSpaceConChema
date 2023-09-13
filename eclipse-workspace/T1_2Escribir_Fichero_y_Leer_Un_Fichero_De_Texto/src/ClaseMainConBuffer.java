@@ -20,7 +20,7 @@ public class ClaseMainConBuffer {
 
 		try {
 			//Se termina la creacion del objeto y se accede al archivo
-		  buffer = new BufferedReader(new FileReader(new File("C:\\Users\\Tomas\\Desktop\\carpetin\\ficherin.txt")));
+		  buffer = new BufferedReader(new FileReader(new File("ficherin.txt")));
 
 		  String linea = null;
 

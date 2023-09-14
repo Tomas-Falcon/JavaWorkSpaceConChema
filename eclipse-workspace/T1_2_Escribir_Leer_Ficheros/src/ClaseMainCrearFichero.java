@@ -2,7 +2,7 @@ import java.io.*;
 /**
  * 
  */
-public class ClaserMain {
+public class ClaseMainCrearFichero{
 
 	/**
 	 * @param args

@@ -2,7 +2,7 @@ import java.io.*;
 /**
  * 
  */
-public class ClaseMainConBuffer {
+public class ClaseMainConBufferLeer {
 
 	/**
 	 * @param args

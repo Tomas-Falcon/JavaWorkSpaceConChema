@@ -1,0 +1,1 @@
+El resultado de las sumas es: 10

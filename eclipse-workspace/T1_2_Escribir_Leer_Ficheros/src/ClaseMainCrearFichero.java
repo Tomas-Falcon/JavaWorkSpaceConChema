@@ -33,7 +33,6 @@ public class ClaseMainCrearFichero{
 		} finally {
 
 		if (fichero != null)
-
 		  try {
 
 		    fichero.close();

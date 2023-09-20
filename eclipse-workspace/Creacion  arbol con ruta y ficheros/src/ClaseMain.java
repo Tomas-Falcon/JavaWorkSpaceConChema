@@ -4,11 +4,25 @@
  */
 
 import java.io.*;
+import java.util.ArrayList;
 
 /**
  * 
  */
-public class ClaseMain {
+public class ClaseMain { 
+	/*
+	 * Utilizamos java.io para todo el tema de los archivos y la escritura
+	 * El java.util solo se utiliza el arraylist
+	 * Explicacion del programa, el programa crea los directirios "Colegio, Tema1, Tema2, Curso1, Curso2, Curso3" y
+	 * los ficheros .txt llamados "Texto1, Texto2, Texto3, Resumen"
+	 * En "Resumen" se guardan los file que estan
+	 * Programa echo por Tomas Francisco Falcon en conjunto con Oswaldo Diego Manzano (Diego tiene su version del programa)
+	 * si ya existiera algun file de los que se crean, no se crea e imprime un mensaje diciendo "El archivo ya existe:" y
+	 * lo mismo con los directorios y si no existe, los crea y te avisa que se crearos
+	 * 
+	 * Hay un problema a la hora de cargar los datos en resumen, los file que estan adentro de Tema3 no se estan cargando
+	 * pero todo lo demas si y no encuentro el error a la hora de escribir
+	 */
 
 	/**
 	 * @param args
@@ -54,6 +68,7 @@ public class ClaseMain {
 	}
 
 	public static void escribir(File resumen, String l1 [], String l2 [], String l3 [],String l4 [],String l5 [],String l6 []) {
+		ArrayList <String> rutas = new ArrayList <> (1);
 		FileWriter fw = null;
 		PrintWriter escritor = null;
 		try {
@@ -61,48 +76,60 @@ public class ClaseMain {
 			int b = 0;
 			 fw = new FileWriter(resumen);
 			escritor = new PrintWriter(fw);
-			String resumennStr [];
+			String espacio = "\n";
 			int i = 0;
 			while (i < l1.length){
 				String a = l1[i];
+				rutas.add(a);
 				i++;
 			}
+			rutas.add(espacio);
 			control = i;
 			i = 0;
 			while (i < l2.length){
 				String a = l2[i];
+				rutas.add(a);
 				i++;
 			}
+			rutas.add(espacio);
 			control = control + i;
 			i = 0;
 			while (i < l3.length){
 				String a = l3[i];
+				rutas.add(a);
 				i++;
 			}
+			rutas.add(espacio);
 			control = control + i;
 			i = 0;
 			while (i < l4.length){
 				String a = l4[i];
+				rutas.add(a);
 				i++;
 			}
+			rutas.add(espacio);
 			control = control + i;
 			i = 0;
 			
 			while (i < l5.length){
 				String a = l5[i];
+				rutas.add(a);
 				i++;
 			}
+			rutas.add(espacio);
 			control = control + i;
 			i = 0;
 			
 			while (i < l6.length){
 				String a = l6[i];
+				rutas.add(a);
 				i++;
 			}
+			rutas.add(espacio);
 			control = control + i;
 			i = 0;
 			while (b < control) {
-			escritor.println(resumennStr [b]);
+			escritor.println(rutas.get(b));
 			b++;}
 		} catch (IOException e) {
 			e.printStackTrace();

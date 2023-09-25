@@ -44,57 +44,28 @@ final class ClaseMain {
 	public static void texto() {
 		
 		while(true) {
-			Scanner sc = new Scanner(System.in);
-			String texto = sc.nextLine();
-			textos.add(texto = comprobarExits(texto));
+			String texto = comprobarExits();
 		}
-		
-	}
-
-	public static void nombre(){
-		System.out.println("Ingrese el nombre del archivo");
 		Scanner sc = new Scanner(System.in);
-		String nombre = sc.nextLine();
-		nombre = nombre + ".txt";
-		exitOkey(nombre);
+		
+		textos.add(texto = sc.nextLine());
+		
+		
+		contador++;
+		comprobarExits();
 	}
 	
 	public static String comprobarExits(String x) {
 			if(x.equalsIgnoreCase("exit")) {
-				nombre();
+				exitOkey();
 				}else {
 					return x;
 				}
-			String a = "No entra en el IF";
-			return a;
+			return x;
 	}
 	
-	public static void exitOkey(String x) {
-		String ruta = System.getProperty("user.home");
-		System.out.println("Tenindo en cuenta que la ruta empieza con: " + ruta);
+	public static void exitOkey() {
 		System.out.println("Ingrese la ruta en la que quiere guardar el archivo: ");
-		Scanner sc = new Scanner(System.in);
-		String texto = sc.nextLine();
-		texto = ruta +texto + x;
-		System.out.println(texto);
-		rutaAescribitr(texto);
 	}
-	
-	public static void rutaAescribitr(String ruta){
-		if (esWindows() == true) {
-			windowsRuta(ruta);
-		}else if (esLinux() == true) {
-			linuxRuta(ruta);
-		}
-	}
-	
-	public static void linuxRuta(String ruta){
-		
-	}
-	
-	public static void windowsRuta(String ruta){
-		
-	}
-	
 
 }

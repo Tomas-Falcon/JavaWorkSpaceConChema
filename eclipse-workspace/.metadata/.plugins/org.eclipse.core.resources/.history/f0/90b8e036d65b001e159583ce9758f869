@@ -55,7 +55,6 @@ final class ClaseMain {
 		System.out.println("Ingrese el nombre del archivo");
 		Scanner sc = new Scanner(System.in);
 		String nombre = sc.nextLine();
-		nombre = nombre + ".txt";
 		exitOkey(nombre);
 	}
 	
@@ -75,7 +74,7 @@ final class ClaseMain {
 		System.out.println("Ingrese la ruta en la que quiere guardar el archivo: ");
 		Scanner sc = new Scanner(System.in);
 		String texto = sc.nextLine();
-		texto = ruta +texto + x;
+		texto = texto + x;
 		System.out.println(texto);
 		rutaAescribitr(texto);
 	}

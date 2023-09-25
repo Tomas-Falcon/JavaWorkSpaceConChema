@@ -55,7 +55,6 @@ final class ClaseMain {
 		System.out.println("Ingrese el nombre del archivo");
 		Scanner sc = new Scanner(System.in);
 		String nombre = sc.nextLine();
-		nombre = nombre + ".txt";
 		exitOkey(nombre);
 	}
 	
@@ -70,13 +69,9 @@ final class ClaseMain {
 	}
 	
 	public static void exitOkey(String x) {
-		String ruta = System.getProperty("user.home");
-		System.out.println("Tenindo en cuenta que la ruta empieza con: " + ruta);
 		System.out.println("Ingrese la ruta en la que quiere guardar el archivo: ");
 		Scanner sc = new Scanner(System.in);
 		String texto = sc.nextLine();
-		texto = ruta +texto + x;
-		System.out.println(texto);
 		rutaAescribitr(texto);
 	}
 	
@@ -87,12 +82,7 @@ final class ClaseMain {
 			linuxRuta(ruta);
 		}
 	}
-	
-	public static void linuxRuta(String ruta){
-		
-	}
-	
-	public static void windowsRuta(String ruta){
+	linuxRuta(String ruta){
 		
 	}
 	

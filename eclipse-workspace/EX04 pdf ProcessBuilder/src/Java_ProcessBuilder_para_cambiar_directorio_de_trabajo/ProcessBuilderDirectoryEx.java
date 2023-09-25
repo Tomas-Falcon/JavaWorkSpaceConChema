@@ -25,7 +25,7 @@ public class ProcessBuilderDirectoryEx {
 		// Crear un lector de entrada para capturar la salida del proceso
 		try (var reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
 			String line;
-			// Leer y mostrar la salida del proceso línea por línea
+			// Leer y mostrar la salida del proceso línea por línea.
 			while ((line = reader.readLine()) != null) {
 				System.out.println(line);
 			}

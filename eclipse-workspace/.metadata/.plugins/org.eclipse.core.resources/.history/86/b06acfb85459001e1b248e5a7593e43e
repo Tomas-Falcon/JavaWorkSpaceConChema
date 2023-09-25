@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+
+/**
+ * 
+ */
+final class ClaseMain {
+	
+	private static String nombreSO = System.getProperty("os.name").toLowerCase();
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+
+	}
+
+}

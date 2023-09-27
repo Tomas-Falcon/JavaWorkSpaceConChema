@@ -2,7 +2,6 @@
  * 
  */
 import java.util.*;
-import java.io.*;
 /**
  * 
  */
@@ -56,9 +55,7 @@ final class ClaseMain {
 		System.out.println("Ingrese el nombre del archivo");
 		Scanner sc = new Scanner(System.in);
 		String nombre = sc.nextLine();
-		System.out.println("Diga el formato del archivo como ejemplo \".txt\"");
-		String terminacion = sc.nextLine();
-		nombre = nombre + terminacion;
+		nombre = nombre + ".txt";
 		exitOkey(nombre);
 	}
 	
@@ -73,52 +70,31 @@ final class ClaseMain {
 	}
 	
 	public static void exitOkey(String x) {
-		String rutaE = System.getProperty("user.home");
-		System.out.println("Tenindo en cuenta que la ruta empieza con: \"" + rutaE + "\" ");
+		String ruta = System.getProperty("user.home");
+		System.out.println("Tenindo en cuenta que la ruta empieza con: " + ruta);
 		System.out.println("Ingrese la ruta en la que quiere guardar el archivo: ");
 		Scanner sc = new Scanner(System.in);
-		String ruta = sc.nextLine();
-		File ruta1 = new File(rutaE + "\\" + ruta);
-		if (ruta1.exists() == false){
-			ruta1.mkdir();
-		}
-		ruta = rutaE + "\\" + ruta + "\\" + x;
-		rutaAescribitr(ruta);
+		String texto = sc.nextLine();
+		texto = ruta +texto + x;
+		System.out.println(texto);
+		rutaAescribitr(texto);
 	}
 	
-	private static void rutaAescribitr(String ruta){
-		System.out.println("El fichero se va a crear en: " + ruta);
-		File ficherin  = new File(ruta);
-		if (ficherin.exists() != true){
-			try {
-				ficherin.createNewFile();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+	public static void rutaAescribitr(String ruta){
+		if (esWindows() == true) {
+			windowsRuta(ruta);
+		}else if (esLinux() == true) {
+			linuxRuta(ruta);
 		}
-		FileWriter fichero =null;
-		PrintWriter escritor = null;
-		try {
-			fichero = new FileWriter(ficherin);
-			escritor= new PrintWriter(fichero);
-			for(String entreLineas : textos) {
-				escritor.println(entreLineas);
-			}
- 		}catch (IOException ioe) {
- 			ioe.printStackTrace();
- 		}finally {
- 			if (fichero!=null) {
- 				try {
- 					fichero.close();
- 				}catch(IOException ioe) {
- 					System.out.println("se produjo un error imprevisto, adios!");
- 				}
- 			}
- 		}
+	}
+	
+	public static void linuxRuta(String ruta){
 		
-	System.out.println("El fichero fue creado con exito!");
 	}
 	
+	public static void windowsRuta(String ruta){
+		
+	}
 	
 
 }

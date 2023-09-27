@@ -78,28 +78,17 @@ final class ClaseMain {
 		System.out.println("Ingrese la ruta en la que quiere guardar el archivo: ");
 		Scanner sc = new Scanner(System.in);
 		String ruta = sc.nextLine();
-		File ruta1 = new File(rutaE + "\\" + ruta);
-		if (ruta1.exists() == false){
-			ruta1.mkdir();
-		}
 		ruta = rutaE + "\\" + ruta + "\\" + x;
+		System.out.println(ruta);
 		rutaAescribitr(ruta);
 	}
 	
 	private static void rutaAescribitr(String ruta){
-		System.out.println("El fichero se va a crear en: " + ruta);
-		File ficherin  = new File(ruta);
-		if (ficherin.exists() != true){
-			try {
-				ficherin.createNewFile();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+		System.out.println(ruta);
 		FileWriter fichero =null;
 		PrintWriter escritor = null;
 		try {
-			fichero = new FileWriter(ficherin);
+			fichero =new FileWriter(ruta);
 			escritor= new PrintWriter(fichero);
 			for(String entreLineas : textos) {
 				escritor.println(entreLineas);
@@ -116,7 +105,6 @@ final class ClaseMain {
  			}
  		}
 		
-	System.out.println("El fichero fue creado con exito!");
 	}
 	
 	

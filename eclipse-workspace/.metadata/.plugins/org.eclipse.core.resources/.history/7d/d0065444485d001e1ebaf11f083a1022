@@ -83,11 +83,12 @@ final class ClaseMain {
 			ruta1.mkdir();
 		}
 		ruta = rutaE + "\\" + ruta + "\\" + x;
+		System.out.println(ruta);
 		rutaAescribitr(ruta);
 	}
 	
 	private static void rutaAescribitr(String ruta){
-		System.out.println("El fichero se va a crear en: " + ruta);
+		System.out.println(ruta);
 		File ficherin  = new File(ruta);
 		if (ficherin.exists() != true){
 			try {
@@ -116,7 +117,6 @@ final class ClaseMain {
  			}
  		}
 		
-	System.out.println("El fichero fue creado con exito!");
 	}
 	
 	

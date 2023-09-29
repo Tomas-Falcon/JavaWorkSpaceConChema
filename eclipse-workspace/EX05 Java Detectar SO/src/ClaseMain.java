@@ -9,7 +9,6 @@ import java.io.*;
 final class ClaseMain {
 	
 	private static String nombreSO = System.getProperty("os.name").toLowerCase();
-	private static int contador = 1;
 	private static ArrayList <String> textos = new ArrayList<String>(1);
 	
 	/**
@@ -39,7 +38,7 @@ final class ClaseMain {
 	
 	public static void solicitarTexto() {
 		System.out.println("Ingrese el texto que quiera guardar:\nPara terminar de escribir, escriba \"exit\".\n");
-		texto();
+		texto(); //funcion para esribir
 	}
 	
 	public static void texto() {
@@ -47,7 +46,8 @@ final class ClaseMain {
 		while(true) {
 			Scanner sc = new Scanner(System.in);
 			String texto = sc.nextLine();
-			textos.add(texto = comprobarExits(texto));
+			//Obtenemos el texto, lo pasamos por la funcion "comprobarExit"
+			textos.add(texto = comprobarExit(texto));
 		}
 		
 	}
@@ -62,11 +62,12 @@ final class ClaseMain {
 		exitOkey(nombre);
 	}
 	
-	public static String comprobarExits(String x) {
+	public static String comprobarExit(String x) {
+		//recibimos el texto y chequeamos que no se escribio "exit"
 			if(x.equalsIgnoreCase("exit")) {
-				nombre();
+				nombre(); //Si SI se escribio exit se le pone un nombre al archivo
 				}else {
-					return x;
+					return x; //Si NO se escribio exit, se retorna el texto y se agrega al arrayList llamado "textos"
 				}
 			String a = "No entra en el IF";
 			return a;
@@ -112,6 +113,7 @@ final class ClaseMain {
  					fichero.close();
  				}catch(IOException ioe) {
  					System.out.println("se produjo un error imprevisto, adios!");
+ 					System.exit(0);
  				}
  			}
  		}

@@ -15,7 +15,7 @@ public class TwoReaders {
 		Process p1 = pa.start();
 		Process p2 = pb.start();
 		
-		//espera a los procesos p1 y p2 como si estuvieran pausados
+     		//espera a los procesos p1 y p2 como si estuvieran pausados
 		p1.waitFor();
 		p2.waitFor();
 		

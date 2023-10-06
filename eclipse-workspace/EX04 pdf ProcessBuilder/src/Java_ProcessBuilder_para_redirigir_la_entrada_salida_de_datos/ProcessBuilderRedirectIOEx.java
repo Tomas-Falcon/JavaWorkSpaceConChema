@@ -1,7 +1,6 @@
 package Java_ProcessBuilder_para_redirigir_la_entrada_salida_de_datos;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class ProcessBuilderRedirectIOEx {
     public static void main(String[] args) throws IOException {

@@ -24,6 +24,7 @@ public class RedirectOutputEx {
 		//Crea un archivo con la fecha de hoy en esa dereccion 
 		
 		// Redirigimos la salida del proceso hacia el archivo especificado.
+		//si se comenta la siguiente linea, se ejecuta el while y la salida de la informacion sale por consola
 		processBuilder.redirectOutput(fileName);
 		
 		// Iniciamos el proceso externo.
@@ -32,6 +33,8 @@ public class RedirectOutputEx {
 		// Creamos un BufferedReader para leer la salida del proceso.
 		try (var reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
 			String line;
+			//la condicion del while no se cumple debido a que ya se redirecciono la salida con "processBuilder.redirectOutput(fileName);"
+			//y la informacion esta en la ruta "fileName" en un archivollamado "output.txt"
 			while ((line = reader.readLine()) != null) {
 				// Mostramos cada línea de la salida del proceso en la consola.
 				System.out.println(line);

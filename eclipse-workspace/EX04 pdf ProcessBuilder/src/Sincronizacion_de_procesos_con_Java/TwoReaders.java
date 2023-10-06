@@ -9,7 +9,7 @@ public class TwoReaders {
 		ProcessBuilder pa = new ProcessBuilder("notepad.exe", "C:\\book1.txt");
 		ProcessBuilder pb = new ProcessBuilder("notepad.exe", "C:\\book2.txt");
 		
-		// el proceso p1 se asigna el processBuilder pa.start;
+		// el proceso p1 se asigna a el processBuilder pa.start;
 		//que hace que empiece el proceso
 		//Lo mismo con el p2
 		Process p1 = pa.start();

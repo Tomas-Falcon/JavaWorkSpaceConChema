@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Lanzador {
 
-    static final int NUM_PROCESOS = 1;
+    static final int NUM_PROCESOS = 4;
     static final String PREFIJO_FICHEROS = "fich";
 
     public static void lanzarSumador(int n1, int n2, String fichResultados) throws IOException {
@@ -56,9 +56,9 @@ public class Lanzador {
         int n1 = Integer.parseInt(args[0]);
         int n2 = Integer.parseInt(args[1]);
         Random random = new Random();
-        n1 = n1 + random.nextInt(10);
-        n2 = n2 + random.nextInt(10);
         for (int i = 1; i <= NUM_PROCESOS; i++) {
+        	n1 = n1 + random.nextInt(10);
+            n2 = n2 + random.nextInt(10);
             System.out.println("n1: " + n1 + " el valor fue randomizado quedando así");
             System.out.println("n2: " + n2 + " el valor fue randomizado quedando así");
             lanzarSumador(n1, n2, PREFIJO_FICHEROS + String.valueOf(i));

@@ -2,6 +2,7 @@ import java.io.RandomAccessFile;
 import java.io.IOException;
 
 public class ClaseMain {
+	//para acceder a los espacios de memoria
 	private RandomAccessFile raf;
 
 	public static void main(String[] args) {

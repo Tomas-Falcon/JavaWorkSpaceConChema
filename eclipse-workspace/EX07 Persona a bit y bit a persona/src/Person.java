@@ -31,7 +31,7 @@ public class Person {
 	}
 
 	public String toString() {
-		return "Person { " + " id- " + id + " + name + age = " + age + " married = " + married + " }";
+		return "Person { " + " id- " + id + " Nombre "+ name + " Edad: "+"  " + age + " casado = " + married + " }";
 	}
 
 	public byte[] toBytes() {

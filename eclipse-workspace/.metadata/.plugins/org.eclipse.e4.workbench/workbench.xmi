@@ -146,9 +146,9 @@
                       <tags>categoryTag:Java</tags>
                     </children>
                   </children>
-                  <children xsi:type="basic:PartSashContainer" xmi:id="_4z5jsH_hEe6_JsirkZ8Nhw" containerData="3663" selectedElement="_-NZSK3TXEe6tBpKXL1QFDg">
-                    <children xsi:type="advanced:Placeholder" xmi:id="_-NZSK3TXEe6tBpKXL1QFDg" elementId="org.eclipse.ui.editorss" containerData="7574" ref="_-NZ5-HTXEe6tBpKXL1QFDg"/>
-                    <children xsi:type="basic:PartStack" xmi:id="_-NZSLHTXEe6tBpKXL1QFDg" elementId="PartStack@3ececd11" containerData="2426" selectedElement="_-NZSLXTXEe6tBpKXL1QFDg">
+                  <children xsi:type="basic:PartSashContainer" xmi:id="_4z5jsH_hEe6_JsirkZ8Nhw" containerData="3663" selectedElement="_-NZSLHTXEe6tBpKXL1QFDg">
+                    <children xsi:type="advanced:Placeholder" xmi:id="_-NZSK3TXEe6tBpKXL1QFDg" elementId="org.eclipse.ui.editorss" containerData="6804" ref="_-NZ5-HTXEe6tBpKXL1QFDg"/>
+                    <children xsi:type="basic:PartStack" xmi:id="_-NZSLHTXEe6tBpKXL1QFDg" elementId="PartStack@3ececd11" containerData="3196" selectedElement="_-NZSLXTXEe6tBpKXL1QFDg">
                       <children xsi:type="advanced:Placeholder" xmi:id="_-NZSLXTXEe6tBpKXL1QFDg" elementId="org.eclipse.ui.console.ConsoleView" ref="_-NagUHTXEe6tBpKXL1QFDg" closeable="true">
                         <tags>View</tags>
                         <tags>categoryTag:General</tags>
@@ -251,7 +251,7 @@
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_SbkZEIJhEe6T0MktdgzBYg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="ProbandoSqlite.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ProbandoSqlite.java&quot; partName=&quot;ProbandoSqlite.java&quot; title=&quot;ProbandoSqlite.java&quot; tooltip=&quot;EX11 Base de Datos/src/SqlitePack/ProbandoSqlite.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/EX11 Base de Datos/src/SqlitePack/ProbandoSqlite.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;12&quot; selectionOffset=&quot;668&quot; selectionTopPixel=&quot;132&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ProbandoSqlite.java&quot; partName=&quot;ProbandoSqlite.java&quot; title=&quot;ProbandoSqlite.java&quot; tooltip=&quot;EX11 Base de Datos/src/SqlitePack/ProbandoSqlite.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/EX11 Base de Datos/src/SqlitePack/ProbandoSqlite.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1815&quot; selectionTopPixel=&quot;477&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
@@ -423,7 +423,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_-Nagj3TXEe6tBpKXL1QFDg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_ncfDkIJgEe6T0MktdgzBYg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_-Nc_vXTXEe6tBpKXL1QFDg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_gNp2UIPJEe6CXIzsGrMewg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_-Nc_vXTXEe6tBpKXL1QFDg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_-NagnHTXEe6tBpKXL1QFDg" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -431,8 +431,8 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_-NagnnTXEe6tBpKXL1QFDg" elementId="org.eclipse.ui.workbench.edit">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_ncfDloJgEe6T0MktdgzBYg" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" command="_-Nc-H3TXEe6tBpKXL1QFDg"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_ncfDl4JgEe6T0MktdgzBYg" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_-Nc-mHTXEe6tBpKXL1QFDg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_gNrEcIPJEe6CXIzsGrMewg" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" enabled="false" command="_-Nc-H3TXEe6tBpKXL1QFDg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_gNrrgIPJEe6CXIzsGrMewg" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_-Nc-mHTXEe6tBpKXL1QFDg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_-NagonTXEe6tBpKXL1QFDg" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -471,7 +471,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_-Nag3nTXEe6tBpKXL1QFDg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_ncfDnYJgEe6T0MktdgzBYg" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_-Nc_eHTXEe6tBpKXL1QFDg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_gNs5oIPJEe6CXIzsGrMewg" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_-Nc_eHTXEe6tBpKXL1QFDg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_-Nag6nTXEe6tBpKXL1QFDg" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>

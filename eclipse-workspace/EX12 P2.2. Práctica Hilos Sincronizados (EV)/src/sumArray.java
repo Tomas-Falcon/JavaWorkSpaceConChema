@@ -11,7 +11,7 @@ public class sumArray {
 			try {
 				Thread.sleep(1000);// permitir el cambio de tarea
 			} catch (InterruptedException exc) {
-				System.out.println("Hilo interrumpido"+exc);
+				System.out.println("Hilo interrumpido  \""+exc+"\" ");
 			}
 		}
 		return sum;

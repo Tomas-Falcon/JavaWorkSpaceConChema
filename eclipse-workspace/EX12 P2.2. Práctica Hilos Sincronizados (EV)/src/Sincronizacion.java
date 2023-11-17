@@ -13,3 +13,44 @@ public class Sincronizacion {
 		}
 	}
 }
+
+/*
+----Horiginal:
+
+	#2 iniciando.
+	#1 iniciando.
+	Total acumulado de #2 es 1
+	Total acumulado de #2 es 3
+	Total acumulado de #2 es 6
+	Total acumulado de #2 es 10
+	Total acumulado de #2 es 15
+	Total acumulado de #1 es 1
+	Suma para #2 es 15	
+	#2 terminado.
+	Total acumulado de #1 es 3
+	Total acumulado de #1 es 6
+	Total acumulado de #1 es 10
+	Total acumulado de #1 es 15
+	Suma para #1 es 15
+	#1 terminado.
+
+ 
+ 
+ ---Modificado:
+	#2 iniciando.
+	#1 iniciando.
+	Total acumulado de #2 es 1
+	Total acumulado de #2 es 3
+	Total acumulado de #2 es 6
+	Total acumulado de #2 es 10
+	Total acumulado de #2 es 15
+	Total acumulado de #1 es 1
+	Suma para #2 es 15
+	#2 terminado.
+	Total acumulado de #1 es 3
+	Total acumulado de #1 es 6
+	Total acumulado de #1 es 10
+	Total acumulado de #1 es 15
+	Suma para #1 es 15
+	#1 terminado.
+ */

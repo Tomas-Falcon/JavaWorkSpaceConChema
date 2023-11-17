@@ -9,9 +9,9 @@ public class sumArray {
 			sum += nums[i];
 			System.out.println("Total acumulado de " + Thread.currentThread().getName() + " es " + sum);
 			try {
-				Thread.sleep(10);// permitir el cambio de tarea
+				Thread.sleep(1000);// permitir el cambio de tarea
 			} catch (InterruptedException exc) {
-				System.out.println("Hilo interrumpido");
+				System.out.println("Hilo interrumpido"+exc);
 			}
 		}
 		return sum;

@@ -23,7 +23,7 @@ public class MiHilo implements Runnable {
 	public void run() {
 		int sum;
 		System.out.println(hilo.getName() + " iniciando.");
-
+		//chequear
 		resp = sumarray.sumArray(a);
 		System.out.println("Suma para " + hilo.getName() + " es " + resp);
 		System.out.println(hilo.getName() + " terminado.");

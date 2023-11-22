@@ -1,81 +1,69 @@
 package cajeraRunable;
 
-public class MainRunnable implements Runnable{
-	
-	private Cliente cliente;
-	private Cajera cajera;
-	private long initialTime;
-	
-	public MainRunnable (Cliente cliente, Cajera cajera, long initialTime){
-		this.cajera = cajera;
-		this.cliente = cliente;
-		this.initialTime = initialTime;
-	}
+public class MainRunnable implements Runnable {
 
-	public static void main(String[] args) {
-		
-		Cliente cliente1 = new Cliente("Cliente 1", new int[] { 2, 2, 1, 5, 2, 3 });
-		Cliente cliente2 = new Cliente("Cliente 2", new int[] { 1, 3, 5, 1, 1 });
-		
-		Cajera cajera1 = new Cajera("Cajera 1");
-		Cajera cajera2 = new Cajera("Cajera 2");
-		
-		// Tiempo inicial de referencia
-		long initialTime = System.currentTimeMillis();
-		
-		Runnable proceso1 = new MainRunnable(cliente1, cajera1, initialTime);
-		Runnable proceso2 = new MainRunnable(cliente2, cajera2, initialTime);
-		
-		new Thread(proceso1).start();
-		new Thread(proceso2).start();
+    private Cliente cliente;
+    private Cajera cajera;
+    private long initialTime;
 
-	}
+    // Constructor de la clase MainRunnable
+    public MainRunnable(Cliente cliente, Cajera cajera, long initialTime) {
+        this.cajera = cajera;
+        this.cliente = cliente;
+        this.initialTime = initialTime;
+    }
 
-	@Override
-	public void run() {
-		this.cajera.procesarCompra(this.cliente, this.initialTime);
-	}
+    // Método principal
+    public static void main(String[] args) {
 
-	/**
-	 * @return the cliente
-	 */
-	public Cliente getCliente() {
-		return cliente;
-	}
+        // Crear dos instancias de la clase Cliente con diferentes listas de productos en el carro de compra
+        Cliente cliente1 = new Cliente("Cliente 1", new int[] {2, 2, 1, 5, 2, 3});
+        Cliente cliente2 = new Cliente("Cliente 2", new int[] {1, 3, 5, 1, 1});
 
-	/**
-	 * @param cliente the cliente to set
-	 */
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
+        // Crear dos instancias de la clase Cajera con diferentes nombres
+        Cajera cajera1 = new Cajera("Cajera 1");
+        Cajera cajera2 = new Cajera("Cajera 2");
 
-	/**
-	 * @return the cajera
-	 */
-	public Cajera getCajera() {
-		return cajera;
-	}
+        // Tiempo inicial de referencia
+        long initialTime = System.currentTimeMillis();
 
-	/**
-	 * @param cajera the cajera to set
-	 */
-	public void setCajera(Cajera cajera) {
-		this.cajera = cajera;
-	}
+        // Crear dos instancias de MainRunnable, una para cada cliente y cajera
+        Runnable proceso1 = new MainRunnable(cliente1, cajera1, initialTime);
+        Runnable proceso2 = new MainRunnable(cliente2, cajera2, initialTime);
 
-	/**
-	 * @return the initialTime
-	 */
-	public long getInitialTime() {
-		return initialTime;
-	}
+        // Iniciar dos hilos para ejecutar los procesos de compra concurrentemente
+        new Thread(proceso1).start();
+        new Thread(proceso2).start();
+    }
 
-	/**
-	 * @param initialTime the initialTime to set
-	 */
-	public void setInitialTime(long initialTime) {
-		this.initialTime = initialTime;
-	}
+    // Implementación del método run de la interfaz Runnable
+    @Override
+    public void run() {
+        this.cajera.procesarCompra(this.cliente, this.initialTime);
+    }
 
+    // Métodos getter y setter para los atributos de la clase MainRunnable
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Cajera getCajera() {
+        return cajera;
+    }
+
+    public void setCajera(Cajera cajera) {
+        this.cajera = cajera;
+    }
+
+    public long getInitialTime() {
+        return initialTime;
+    }
+
+    public void setInitialTime(long initialTime) {
+        this.initialTime = initialTime;
+    }
 }

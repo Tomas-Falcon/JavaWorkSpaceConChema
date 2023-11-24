@@ -1,61 +1,64 @@
 package P2_3_Practica_Crear_y_Consultar_Tabla_DB4O;
 
-//=========== EJEMPLO DB4O  === DEFINICIÓN CLASES ============================>>>
-
+// Definición de la clase Persona
 public class Persona {
 
-	protected String nombre;
-	protected int edad;
-	protected double peso;
-	protected double altura;
+    // Atributos de la clase
+    protected String nombre;
+    protected int edad;
+    protected double peso;
+    protected double altura;
 
-	public Persona() {
-	}
+    // Constructor por defecto
+    public Persona() {
+    }
 
-	public Persona(String nombre, int edad, double peso, double altura) {
-		this.nombre = nombre;
-		this.edad = edad;
-		this.peso = peso;
-		this.altura = altura;
-	}
+    // Constructor con parámetros
+    public Persona(String nombre, int edad, double peso, double altura) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.peso = peso;
+        this.altura = altura;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    // Métodos getter y setter para cada atributo
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public int getEdad() {
-		return edad;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public void setEdad(int edad) {
-		this.edad = edad;
-	}
+    public int getEdad() {
+        return edad;
+    }
 
-	public double getPeso() {
-		return peso;
-	}
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
 
-	public void setPeso(double peso) {
-		this.peso = peso;
-	}
+    public double getPeso() {
+        return peso;
+    }
 
-	public double getAltura() {
-		return altura;
-	}
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
 
-	public void setAltura(double altura) {
-		this.altura = altura;
-	}
+    public double getAltura() {
+        return altura;
+    }
 
-	@Override
-	public String toString() {
-		return "Persona{" + "nombre=" + nombre + ", edad=" + edad + ", peso=" + peso + ", altura=" + altura + '}';
-	}
-	
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
 
-
+    // Método toString para representación de cadena
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' + ", edad=" + edad + ", peso=" + peso +", altura=" + altura + '}';
+    }
 }

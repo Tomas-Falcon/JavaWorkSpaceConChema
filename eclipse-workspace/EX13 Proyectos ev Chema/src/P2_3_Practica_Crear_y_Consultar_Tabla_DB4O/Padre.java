@@ -27,7 +27,9 @@ public class Padre extends Persona {
         this.hijos = hijos;
     }
     
-    public String imprimirHijos(){
-    	return  super.toString()  + ", es padre de " + hijos;
+    public String toString() {
+
+        return super.toString() + ", Hijos=" + hijos;
+
     }
 }

@@ -1,0 +1,12 @@
+if (fichResultado.exists() && fichResultado.length() > 0) {
+		            try (BufferedReader br = new BufferedReader(new FileReader(fichResultado))) {
+		                String linea;
+		                while ((linea = br.readLine()) != null) {
+		                    System.out.println(linea);
+		                }
+		            } catch (IOException e) {
+		                e.printStackTrace();
+		            }
+		        } else {
+		            System.out.println("El archivo no existe o está vacío.");
+		        }

@@ -1,0 +1,25 @@
+package P2_3_Practica_Crear_y_Consultar_Tabla_DB4O;
+
+public class Hijo extends Persona {
+	private String direccion;
+	Hijo(String direccion, String nombre, int edad, double peso, double altura ){
+		this.direccion = direccion;
+		super.altura = altura;
+		super.edad = edad;
+		super.nombre = nombre;
+		super.peso = peso;
+		
+	}
+	/**
+	 * @return the sexo
+	 */
+	public String getdireccion() {
+		return direccion;
+	}
+	/**
+	 * @param sexo the sexo to set
+	 */
+	public void setdireccion(String direccion) {
+		this.direccion = direccion;
+	}
+}

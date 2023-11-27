@@ -1,0 +1,17 @@
+package HilosDinamicosSincronizados;
+
+public class DinamicoSincronizado {
+	public static void main(String[] args) {
+		int a[] = { 1, 2, 3, 4, 5 };
+		MiHiloDinamicoSincronizado mh1 = MiHiloDinamicoSincronizado.creaEInicia("#1", a);
+		MiHiloDinamicoSincronizado mh2 = MiHiloDinamicoSincronizado.creaEInicia("#2", a);
+
+		try {
+		 
+			mh1.hilo.join();
+			mh2.hilo.join();
+		} catch (InterruptedException exc) {
+			System.out.println("Hilo principal interrumpido.");
+		}
+	}
+}

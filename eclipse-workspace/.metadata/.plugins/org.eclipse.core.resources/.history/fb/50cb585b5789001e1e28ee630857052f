@@ -1,0 +1,30 @@
+package P2_3_Practica_Crear_y_Consultar_Tabla_DB4O;
+
+import java.util.*;
+
+public class Padre extends Persona {
+    private ArrayList <Persona> hijos;
+
+    // Constructor de la clase Hijo que inicializa atributos heredados de Persona y el nuevo atributo direccion
+    Padre(ArrayList <Persona> hijos, String nombre, int edad, double peso, double altura) {
+        // Llama al constructor de la clase padre (Persona) para inicializar sus atributos
+        super(nombre, edad, peso, altura);
+        
+        // Inicializa el atributo direccion
+        this.hijos = hijos;
+    }
+
+    /**
+     * @return la dirección del hijo
+     */
+    public ArrayList <Persona> getHijos() {
+        return hijos;
+    }
+
+    /**
+     * @param se le pasa hijos y seea el array de hijos
+     */
+    public void setHijos(ArrayList <Persona> hijos) {
+        this.hijos = hijos;
+    }
+}

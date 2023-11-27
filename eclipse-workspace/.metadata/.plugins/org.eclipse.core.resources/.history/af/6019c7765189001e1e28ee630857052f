@@ -1,0 +1,92 @@
+package P2_3_Practica_Crear_y_Consultar_Tabla_DB4O;
+
+import com.db4o.Db4o;
+import com.db4o.Db4oEmbedded;
+import com.db4o.ObjectContainer;
+import com.db4o.ObjectSet;
+
+public class EjemploDB4O {
+    private static final String NOMBRE_ARCHIVO_DB = "personas.db4o";
+
+    public static void main(String[] args) {
+        // Creamos la conexión
+        ObjectContainer db = Db4oEmbedded.openFile(NOMBRE_ARCHIVO_DB);
+
+        // Creamos los objetos
+        Persona persona1 = new Persona("Fernando", 30, 1.73, 73);
+        Persona persona2 = new Persona("Pepe", 30, 1.75, 80);
+        Persona persona3 = new Persona("Alfredo", 20, 1.9, 90);
+        Persona persona4 = new Persona("Roberto", 35, 1.70, 70);
+        Persona persona5 = new Persona("Domingo", 30, 1.73, 80);
+
+        // Guardamos los objetos en la base de datos
+        almacenarPersonas(db, persona1, persona2, persona3, persona4, persona5);
+
+        // Mostrar todas las personas
+        consultarYMostrarTodas(db);
+
+        // Personas con 30 años
+        consultarYMostrarPorEdad(db, 30);
+
+        // Personas con 30 años y 1.73cm de altura
+        consultarYMostrarPorEdadAltura(db, 30, 1.73);
+
+        // Personas llamadas Domingo
+        consultarYMostrarPorNombre(db, "Domingo");
+
+        // Borrar Personas llamadas Pepe
+        borrarPorNombre(db, "Pepe");
+
+        // Cerramos la base de datos
+        db.close();
+    }
+
+    private static void almacenarPersonas(ObjectContainer db, Persona... personas) {
+        for (Persona persona : personas) {
+            db.store(persona);
+        }
+    }
+
+    private static void consultarYMostrarTodas(ObjectContainer db) {
+        Persona personaEjemplo = new Persona();
+        ObjectSet<Persona> resultado = db.queryByExample(personaEjemplo);
+        System.out.println("Todas las personas");
+        mostrarResultados(resultado);
+    }
+
+    private static void consultarYMostrarPorEdad(ObjectContainer db, int edad) {
+        Persona personaEjemplo = new Persona(null, edad, 0, 0);
+        ObjectSet<Persona> resultado = db.queryByExample(personaEjemplo);
+        System.out.println("Personas con " + edad + " años");
+        mostrarResultados(resultado);
+    }
+
+    private static void consultarYMostrarPorEdadAltura(ObjectContainer db, int edad, double altura) {
+        Persona personaEjemplo = new Persona(null, edad, altura, 0);
+        ObjectSet<Persona> resultado = db.queryByExample(personaEjemplo);
+        System.out.println("Personas con " + edad + " años y " + altura + " cm de altura");
+        mostrarResultados(resultado);
+    }
+
+    private static void consultarYMostrarPorNombre(ObjectContainer db, String nombre) {
+        Persona personaEjemplo = new Persona(nombre, 0, 0, 0);
+        ObjectSet<Persona> resultado = db.queryByExample(personaEjemplo);
+        System.out.println("Personas llamadas " + nombre);
+        mostrarResultados(resultado);
+    }
+
+    private static void borrarPorNombre(ObjectContainer db, String nombre) {
+        Persona personaEjemplo = new Persona(nombre, 0, 0, 0);
+        ObjectSet<Persona> resultado = db.queryByExample(personaEjemplo);
+        System.out.println("Borradas Personas llamadas " + nombre);
+        while (resultado.hasNext()) {
+            db.delete(resultado.next());
+        }
+    }
+
+    private static void mostrarResultados(ObjectSet<Persona> resultado) {
+        while (resultado.hasNext()) {
+            System.out.println(resultado.next());
+        }
+    }
+}

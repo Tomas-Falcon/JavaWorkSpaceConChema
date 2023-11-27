@@ -1,0 +1,28 @@
+package P2_3_Practica_Crear_y_Consultar_Tabla_DB4O;
+
+public class Padre extends Persona {
+    private String direccion;
+
+    // Constructor de la clase Hijo que inicializa atributos heredados de Persona y el nuevo atributo direccion
+    Padre(String direccion, String nombre, int edad, double peso, double altura) {
+        // Llama al constructor de la clase padre (Persona) para inicializar sus atributos
+        super(nombre, edad, peso, altura);
+        
+        // Inicializa el atributo direccion
+        this.direccion = direccion;
+    }
+
+    /**
+     * @return la dirección del hijo
+     */
+    public String getDireccion() {
+        return direccion;
+    }
+
+    /**
+     * @param direccion la dirección a establecer
+     */
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+}

@@ -1,0 +1,49 @@
+package TicTac;
+
+public class TicTac {
+    String estado;
+
+    // Método que representa el "tic" del juego
+    synchronized void tic(boolean corriendo) {
+        // Si el juego no está en ejecución, simplemente marca el estado como "ticmarcado" y notifica a otros hilos
+        if (!corriendo) {
+            estado = "ticmarcado";
+            notify();
+            return;
+        }
+
+        // Si el juego está en ejecución, imprime "Tic" y marca el estado como "ticmarcado"
+        System.out.print("Tic ");
+        estado = "ticmarcado";
+        notify();
+        try {
+            // Espera hasta que el estado cambie a "tacmarcado"
+            while (!estado.equals("tacmarcado"))
+                wait();
+        } catch (InterruptedException exc) {
+            System.out.println("Hilo interrumpido.");
+        }
+    }
+
+    // Método que representa el "tac" del juego
+    synchronized void tac(boolean corriendo) {
+        // Si el juego no está en ejecución, simplemente marca el estado como "tacmarcado" y notifica a otros hilos
+        if (!corriendo) {
+            estado = "tacmarcado";
+            notify();
+            return;
+        }
+
+        // Si el juego está en ejecución, imprime "Tac" y marca el estado como "tacmarcado"
+        System.out.println("Tac");
+        estado = "tacmarcado";
+        notify();
+        try {
+            // Espera hasta que el estado cambie a "ticmarcado"
+            while (!estado.equals("ticmarcado"))
+                wait();
+        } catch (InterruptedException exc) {
+            System.out.println("Hilo interrumpido.");
+        }
+    }
+}

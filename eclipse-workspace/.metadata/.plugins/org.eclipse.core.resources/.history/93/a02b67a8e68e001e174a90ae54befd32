@@ -1,0 +1,40 @@
+package TicTac;
+
+public class TicTac {
+	String estado;
+
+	synchronized void tic(boolean corriendo) {
+		if (!corriendo) {
+			estado = "ticmarcado";
+			notify();
+			return;
+		}
+		
+		System.out.print("Tic ");
+		estado = "ticmarcado";
+		notify();
+		try {
+			while (!estado.equals("tacmarcado"))
+				wait();
+		} catch (InterruptedException exc) {
+			System.out.println("Hilo interrumpido.");
+		}
+	}
+
+	synchronized void tac(boolean corriendo) {
+		if (!corriendo) {
+			estado = "tacmarcado";
+			notify();
+			return;
+		}
+		System.out.println("Tac");
+		estado = "tacmarcado";
+		notify();
+		try {
+			while (!estado.equals("ticmarcado"))
+				wait();
+		} catch (InterruptedException exc) {
+			System.out.println("Hilo interrumpido.");
+		}
+	}
+}

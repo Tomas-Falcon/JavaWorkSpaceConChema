@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;bolsas&apos; to &apos;Bolsas&apos;&#x0D;&#x0A;- Original project: &apos;EX09 Practicas Chema NE&apos;&#x0D;&#x0A;- Original element: &apos;EX09 Practicas Chema NE/src/bolsas&apos;&#x0D;&#x0A;- Renamed element: &apos;EX09 Practicas Chema NE/src/Bolsas&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;bolsas&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;bolsas" name="Bolsas" qualified="false" references="true" stamp="1701360054357" textual="false" version="1.0"/>
+</session>

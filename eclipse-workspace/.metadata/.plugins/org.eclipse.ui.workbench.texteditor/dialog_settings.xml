@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="out"/>
+		<item key="selection" value="nMaximo"/>
 		<list key="findhistory">
+			<item value="maximo"/>
+			<item value="minimo"/>
+			<item value="porcentaje"/>
 			<item value="Out"/>
 			<item value="Ou"/>
 			<item value="Outpu"/>
@@ -20,11 +23,14 @@
 			<item value="linea"/>
 		</list>
 		<list key="replacehistory">
+			<item value="nMaximo"/>
+			<item value="nMinimo"/>
+			<item value="posicion"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="487"/>
-		<item key="DIALOG_Y_ORIGIN" value="186"/>
+		<item key="DIALOG_X_ORIGIN" value="875"/>
+		<item key="DIALOG_Y_ORIGIN" value="178"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

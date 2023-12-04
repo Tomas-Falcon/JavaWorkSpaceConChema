@@ -16,7 +16,6 @@
     <fullyQualifiedTypeName name="com.db4o.Db4oEmbedded"/>
     <fullyQualifiedTypeName name="P2_3_Practica_Crear_y_Consultar_Tabla_DB4O.Padre"/>
     <fullyQualifiedTypeName name="P2_3_Practica_Crear_y_Consultar_Tabla_DB4O.Persona"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.lang.Runnable"/>
     <fullyQualifiedTypeName name="java.util.Vector"/>
     <fullyQualifiedTypeName name="hipodromoLaZarzuela.ClaseHipódromo"/>
@@ -26,4 +25,9 @@
     <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="hipodromoLaZarzuela.ClaseCaballo"/>
+    <fullyQualifiedTypeName name="ClaseConector"/>
+    <fullyQualifiedTypeName name="Empleado"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="Fabrica"/>
 </qualifiedTypeNameHistroy>

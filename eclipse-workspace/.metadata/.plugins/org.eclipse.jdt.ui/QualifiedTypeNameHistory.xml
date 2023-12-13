@@ -30,4 +30,5 @@
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="Fabrica"/>
+    <fullyQualifiedTypeName name="P2_2_Practica_CRUD_en_MySQL.Conecxion"/>
 </qualifiedTypeNameHistroy>

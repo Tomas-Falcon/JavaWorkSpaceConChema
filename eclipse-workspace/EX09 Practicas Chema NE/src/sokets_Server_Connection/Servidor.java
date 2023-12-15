@@ -18,7 +18,7 @@ public class Servidor {
 
     private static void iniciarServidor() {
         try {
-            ServerSocket server = new ServerSocket(0);
+            ServerSocket server = new ServerSocket(50313);
             System.out.println("Servidor esperando conexión en el puerto: " + server.getLocalPort());
 
             while (true) {

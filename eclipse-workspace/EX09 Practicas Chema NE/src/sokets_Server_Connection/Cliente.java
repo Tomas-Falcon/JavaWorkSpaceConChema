@@ -9,7 +9,7 @@ import java.net.UnknownHostException;
 public class Cliente {
     public static void main(String[] args) {
         try {
-            Socket s = new Socket("localhost", 50165);
+            Socket s = new Socket("localhost", 50313);
             System.out.println("Conectado al servidor en el puerto: " + s.getLocalPort());
 
             // Recibir datos del servidor

@@ -1,0 +1,17 @@
+A partir de los apuntes de teoría, realizar una aplicación CLIENTE-SERVIDOR con estas características:
+
+- 1 Proceso servidor, multihilo, para atender múltiples clientes, hace ECO o similar a partir de la información recibida y desconecta al recibir "ADIOS".
+
+- 3 procesos clientes que comunican con el servidor, enviando mensajes y palabra clave "ADIOS para finalizar comunicación.
+
+- Opcional:  Añadir nuevas palabras clave y funcionalidades, objetos gráficos Swing, etc.
+
+******EJECUTAR DESDE CONSOLA, CON ECLIPSE CERRADO Y CAPTURAR PANTALLAS CON TODOS LOS PROCESOS FUNCIONANDO**
+
+Se solicita al alumno entregar los fuentes comentados, realización de pruebas que prueben su comprensión de la programación multihilo USANDO java sockets , con comentarios, explicación y capturas según GUIÓN DE PRÁCTICAS propuesto en clase y PLANTILLA DE WORD. Se acompañará pdf y archivos de código. Añadir CONCLUSIONES.
+
+
+
+
+
+quiero hacer un programa que contenga las siguientes cosas "un servidor con serversockets, que las palabras que reciba retorne la palabra "ECO" y la reciba el cliente, que al recibir la palabra "adios" retorne un "adios que tenga un buen dia" y se finalice el servidor y que el servidor al iniciarce inice 5 hilos de clientes, la clase clientes estara echa con Swing, tendra un boton que obtendra el texto de la caja donde el usuario escriba y lo envie al servidor, tendra una caja para ver todo el texto retornado por el servidor"

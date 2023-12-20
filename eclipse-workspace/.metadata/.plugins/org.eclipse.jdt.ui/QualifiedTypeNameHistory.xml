@@ -40,4 +40,5 @@
     <fullyQualifiedTypeName name="java.net.Socket"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="sokets_Server_Connection.Cliente"/>
+    <fullyQualifiedTypeName name="Practica_Cliente_Servidor_Multihilo_EV.Servidor"/>
 </qualifiedTypeNameHistroy>

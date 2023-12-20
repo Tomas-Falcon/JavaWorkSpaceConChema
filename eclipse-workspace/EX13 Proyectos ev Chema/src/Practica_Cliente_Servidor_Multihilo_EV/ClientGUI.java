@@ -35,7 +35,7 @@ public class ClientGUI extends JFrame {
         JPanel inputPanel = new JPanel();
         inputPanel.add(inputField);
         inputPanel.add(sendButton);
-
+//borrar
         add(inputPanel, "South");
 
         setVisible(true);

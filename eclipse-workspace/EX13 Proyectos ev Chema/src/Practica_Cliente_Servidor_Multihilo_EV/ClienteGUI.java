@@ -1,4 +1,4 @@
-package Practica_Cliente_Servidor_Multihilo_EV;
+//package Practica_Cliente_Servidor_Multihilo_EV;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

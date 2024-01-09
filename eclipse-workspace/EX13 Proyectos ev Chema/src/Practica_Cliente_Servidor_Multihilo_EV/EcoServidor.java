@@ -9,43 +9,58 @@ import java.net.Socket;
 
 public class EcoServidor {
     public static void main(String[] args) {
-        try (ServerSocket serverSocket = new ServerSocket(12345)) {
-            System.out.println("Servidor esperando conexiones...");
+        final int puerto = 12345;
 
-            // Inicia 5 hilos de clientes
-            for (int i = 0; i < 5; i++) {
-                new ClientHandler(serverSocket.accept()).start();
+        try {
+            // Crear un socket de servidor en el puerto especificado
+            ServerSocket serverSocket = new ServerSocket(puerto);
+            System.out.println("Servidor esperando conexiones en el puerto " + puerto);
+
+            while (true) {
+                // Esperar a que un cliente se conecte
+                Socket clienteSocket = serverSocket.accept();
+                System.out.println("Cliente conectado desde " + clienteSocket.getInetAddress());
+
+                // Crear un nuevo hilo para manejar la comunicación con el cliente
+                Thread clienteThread = new Thread(new ClienteHandler(clienteSocket));
+                clienteThread.start();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private static class ClientHandler extends Thread {
-        private final Socket clientSocket;
+    private static class ClienteHandler implements Runnable {
+        private Socket clienteSocket;
 
-        public ClientHandler(Socket socket) {
-            this.clientSocket = socket;
+        public ClienteHandler(Socket socket) {
+            this.clienteSocket = socket;
         }
 
         @Override
         public void run() {
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-                 PrintWriter writer = new PrintWriter(clientSocket.getOutputStream(), true)) {
+            try {
+                // Configurar los flujos de entrada/salida
+                BufferedReader entrada = new BufferedReader(new InputStreamReader(clienteSocket.getInputStream()));
+                PrintWriter salida = new PrintWriter(clienteSocket.getOutputStream(), true);
 
-                String input;
-                while ((input = reader.readLine()) != null) {
-                    System.out.println("Cliente dice: " + input);
+                // Leer datos del cliente y enviar el eco
+                String mensajeCliente;
+                while ((mensajeCliente = entrada.readLine()) != null) {
+                    System.out.println("Cliente dice: " + mensajeCliente);
 
-                    if (input.equalsIgnoreCase("adios")) {
-                        writer.println("Adiós, que tengas un buen día");
-                        break; // Finaliza el hilo si recibe "adios"
-                    } else {
-                        writer.println("ECO"); // Responde con "ECO"
+                    // Enviar el eco al cliente
+                    salida.println("ECHO: " + mensajeCliente);
+
+                    // Verificar si el cliente quiere desconectarse
+                    if (mensajeCliente.equalsIgnoreCase("adios")) {
+                        System.out.println("Cliente se desconectó.");
+                        break;
                     }
                 }
 
-                System.out.println("Conexión cerrada con el cliente.");
+                // Cerrar la conexión con el cliente
+                clienteSocket.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }

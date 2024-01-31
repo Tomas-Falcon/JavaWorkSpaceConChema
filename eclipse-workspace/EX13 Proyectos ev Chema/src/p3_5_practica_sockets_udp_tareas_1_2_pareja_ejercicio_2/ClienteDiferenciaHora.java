@@ -8,7 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Cliente {
+public class ClienteDiferenciaHora {
 
     public static void main(String[] args) {
         try {

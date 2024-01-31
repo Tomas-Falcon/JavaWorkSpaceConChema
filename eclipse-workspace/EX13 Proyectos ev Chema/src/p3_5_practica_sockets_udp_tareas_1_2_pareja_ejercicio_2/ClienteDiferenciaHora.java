@@ -32,9 +32,9 @@ public class ClienteDiferenciaHora {
             try {
                 Date fechaServidor = formatoFecha.parse(respuesta);
                 long diferenciaEnMilisegundos = horaLocal.getTime() - fechaServidor.getTime();
-                long diferenciaEnSegundos = diferenciaEnMilisegundos / 1000;
+                long diferenciaEnSegundos = diferenciaEnMilisegundos / 1000 / 60;
 
-                System.out.println("Diferencia: " + diferenciaEnSegundos + " segundos");
+                System.out.println("Diferencia: " + diferenciaEnSegundos + " Minutos");
             } catch (ParseException e) {
                 System.out.println("Error al parsear la fecha del servidor.");
             }

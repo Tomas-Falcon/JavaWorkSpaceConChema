@@ -11,7 +11,7 @@ public class Servidor {
 
     public static void main(String[] args) {
         try {
-            ServerSocket serverSocket = new ServerSocket(12345); // Puerto del servidor
+            ServerSocket serverSocket = new ServerSocket(12345);// Puerto del servidor
 
             while (true) {
                 Socket clientSocket = serverSocket.accept(); // Espera a que un cliente se conecte

@@ -8,8 +8,11 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Tomas\Desktop\AppClima"/>
 			<item value="C:\Users\Tomas\Git\JavaWorkSpaceConChema\eclipse-workspace\EX09 Practicas Chema NE"/>
 			<item value="C:\Users\Tomas\Desktop\EX09 Practicas Chema NE"/>
 		</list>
+	</section>
+	<section name="ExternalProjectImportWizard">
 	</section>
 </section>

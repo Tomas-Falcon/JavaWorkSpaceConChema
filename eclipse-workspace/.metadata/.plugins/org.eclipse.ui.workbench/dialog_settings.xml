@@ -33,4 +33,8 @@
 		<list key="textArray">
 		</list>
 	</section>
+	<section name="FileSystemImportWizard">
+	</section>
+	<section name="ZipFileImportWizard">
+	</section>
 </section>

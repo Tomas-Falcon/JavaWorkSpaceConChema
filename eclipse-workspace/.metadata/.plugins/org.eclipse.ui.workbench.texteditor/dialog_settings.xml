@@ -6,8 +6,13 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="getPassword"/>
+		<item key="selection" value="//fail"/>
 		<list key="findhistory">
+			<item value="fail"/>
+			<item value="assertNull"/>
+			<item value="assertTrue"/>
+			<item value="assertNotNull"/>
+			<item value="assertEquals"/>
 			<item value="getContraseña"/>
 			<item value="getNombre"/>
 			<item value="NOMBRE_CAMPO"/>
@@ -18,13 +23,13 @@
 			<item value="porcentaje"/>
 			<item value="Out"/>
 			<item value="Ou"/>
-			<item value="Outpu"/>
-			<item value="File"/>
-			<item value="fileInput"/>
-			<item value="fileIn"/>
-			<item value="file"/>
 		</list>
 		<list key="replacehistory">
+			<item value="//fail"/>
+			<item value="//assertNull"/>
+			<item value="//assertTrue"/>
+			<item value="//assertNotNull"/>
+			<item value="//assertEquals"/>
 			<item value="getPassword"/>
 			<item value="getName"/>
 			<item value="NAME_FIELD_NAME"/>

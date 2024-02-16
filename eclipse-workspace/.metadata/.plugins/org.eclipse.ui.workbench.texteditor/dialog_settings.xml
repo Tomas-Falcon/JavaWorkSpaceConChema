@@ -6,8 +6,13 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="nMaximo"/>
+		<item key="selection" value="getPassword"/>
 		<list key="findhistory">
+			<item value="getContraseña"/>
+			<item value="getNombre"/>
+			<item value="NOMBRE_CAMPO"/>
+			<item value="Account"/>
+			<item value="Cuenta"/>
 			<item value="maximo"/>
 			<item value="minimo"/>
 			<item value="porcentaje"/>
@@ -18,11 +23,12 @@
 			<item value="fileInput"/>
 			<item value="fileIn"/>
 			<item value="file"/>
-			<item value="read"/>
-			<item value="sumador"/>
-			<item value="linea"/>
 		</list>
 		<list key="replacehistory">
+			<item value="getPassword"/>
+			<item value="getName"/>
+			<item value="NAME_FIELD_NAME"/>
+			<item value="Cuenta"/>
 			<item value="nMaximo"/>
 			<item value="nMinimo"/>
 			<item value="posicion"/>

@@ -5,10 +5,10 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 /**
- * Example account object that is persisted to disk by the DAO and other example classes.
+ * Example Cuenta object that is persisted to disk by the DAO and other example classes.
  */
-@DatabaseTable(tableName = "accounts")
-public class Account {
+@DatabaseTable(tableName = "Cuentas")
+public class Cuenta {
 
 	// for QueryBuilder to be able to find the fields
 	public static final String NAME_FIELD_NAME = "name";
@@ -23,15 +23,15 @@ public class Account {
 	@DatabaseField(columnName = PASSWORD_FIELD_NAME)
 	private String password;
 
-	Account() {
+	Cuenta() {
 		// all persisted classes must define a no-arg constructor with at least package visibility
 	}
 
-	public Account(String name) {
+	public Cuenta(String name) {
 		this.name = name;
 	}
 
-	public Account(String name, String password) {
+	public Cuenta(String name, String password) {
 		this.name = name;
 		this.password = password;
 	}
@@ -66,6 +66,6 @@ public class Account {
 		if (other == null || other.getClass() != getClass()) {
 			return false;
 		}
-		return name.equals(((Account) other).name);
+		return name.equals(((Cuenta) other).name);
 	}
 }

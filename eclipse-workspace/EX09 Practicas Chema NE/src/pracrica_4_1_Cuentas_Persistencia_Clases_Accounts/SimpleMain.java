@@ -23,226 +23,223 @@ import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
 /**
- * Main sample routine to show how to do basic operations with the package.
+ * Rutina principal de ejemplo para mostrar cómo realizar operaciones básicas con el paquete.
  * 
  * <p>
- * <b>NOTE:</b> We use asserts in a couple of places to verify the results but if this were actual production code, we
- * would have proper error handling.
+ * <b>NOTA:</b> Utilizamos aserciones en algunos lugares para verificar los resultados, pero si este fuera un código de producción real, tendríamos un manejo de errores adecuado.
  * </p>
  */
 public class SimpleMain {
 
-	// we are using the in-memory H2 database
-	private final static String DATABASE_URL = "jdbc:h2:mem:account";
+    // Estamos utilizando la base de datos H2 en memoria
+    private final static String URL_BASE_DE_DATOS = "jdbc:h2:mem:account";
 
-	private Dao<Account, Integer> accountDao;
+    private Dao<Cuenta, Integer> daoCuenta;
 
-	public static void main(String[] args) throws Exception {
-		// turn our static method into an instance of Main
-		new SimpleMain().doMain(args);
-	}
+    public static void main(String[] args) throws Exception {
+        // Convertimos nuestro método estático en una instancia de Main
+        new SimpleMain().realizarMain(args);
+    }
 
-	private void doMain(String[] args) throws Exception {
-		ConnectionSource connectionSource = null;
-		try {
-			// create our data-source for the database
-			connectionSource = new JdbcConnectionSource(DATABASE_URL);
-			// setup our database and DAOs
-			setupDatabase(connectionSource);
-			// read and write some data
-			readWriteData();
-			// do a bunch of bulk operations
-			readWriteBunch();
-			// show how to use the SelectArg object
-			useSelectArgFeature();
-			// show how to use the SelectArg object
-			useTransactions(connectionSource);
-			System.out.println("\n\nIt seems to have worked\n\n");
-		} finally {
-			// destroy the data source which should close underlying connections
-			if (connectionSource != null) {
-				connectionSource.close();
-			}
-		}
-	}
+    private void realizarMain(String[] args) throws Exception {
+        ConnectionSource fuenteDeConexion = null;
+        try {
+            // Creamos nuestra fuente de conexión para la base de datos
+            fuenteDeConexion = new JdbcConnectionSource(URL_BASE_DE_DATOS);
+            // Configuramos nuestra base de datos y DAOs
+            configurarBaseDeDatos(fuenteDeConexion);
+            // Leemos y escribimos algunos datos
+            leerEscribirDatos();
+            // Realizamos varias operaciones a granel
+            leerEscribirLote();
+            // Mostramos cómo usar el objeto SelectArg
+            usarCaracteristicaSelectArg();
+            // Mostramos cómo usar transacciones
+            usarTransacciones(fuenteDeConexion);
+            System.out.println("\n\nParece que ha funcionado\n\n");
+        } finally {
+            // Destruimos la fuente de datos, lo que debería cerrar las conexiones subyacentes
+            if (fuenteDeConexion != null) {
+                fuenteDeConexion.close();
+            }
+        }
+    }
 
-	/**
-	 * Setup our database and DAOs
-	 */
-	private void setupDatabase(ConnectionSource connectionSource) throws Exception {
+    /**
+     * Configuramos nuestra base de datos y DAOs
+     */
+    private void configurarBaseDeDatos(ConnectionSource fuenteDeConexion) throws Exception {
 
-		accountDao = DaoManager.createDao(connectionSource, Account.class);
+        daoCuenta = DaoManager.createDao(fuenteDeConexion, Cuenta.class);
 
-		// if you need to create the table
-		TableUtils.createTable(connectionSource, Account.class);
-	}
+        // Si necesitas crear la tabla
+        TableUtils.createTable(fuenteDeConexion, Cuenta.class);
+    }
 
-	/**
-	 * Read and write some example data.
-	 */
-	private void readWriteData() throws Exception {
-		// create an instance of Account
-		String name = "Jim Coakley";
-		Account account = new Account(name);
+    /**
+     * Leemos y escribimos algunos datos de ejemplo.
+     */
+    private void leerEscribirDatos() throws Exception {
+        // Creamos una instancia de Cuenta
+        String nombre = "Jim Coakley";
+        Cuenta cuenta = new Cuenta(nombre);
 
-		// persist the account object to the database
-		accountDao.create(account);
-		int id = account.getId();
-		verifyDb(id, account);
+        // Persistimos el objeto de cuenta en la base de datos
+        daoCuenta.create(cuenta);
+        int id = cuenta.getId();
+        verificarBaseDeDatos(id, cuenta);
 
-		// assign a password
-		account.setPassword("_secret");
-		// update the database after changing the object
-		accountDao.update(account);
-		verifyDb(id, account);
+        // Asignamos una contraseña
+        cuenta.setPassword("_secreta");
+        // Actualizamos la base de datos después de cambiar el objeto
+        daoCuenta.update(cuenta);
+        verificarBaseDeDatos(id, cuenta);
 
-		// query for all items in the database
-		List<Account> accounts = accountDao.queryForAll();
-		assertEquals("Should have found 1 account matching our query", 1, accounts.size());
-		verifyAccount(account, accounts.get(0));
+        // Consultamos todos los elementos en la base de datos
+        List<Cuenta> cuentas = daoCuenta.queryForAll();
+        assertEquals("Deberíamos haber encontrado 1 cuenta coincidente con nuestra consulta", 1, cuentas.size());
+        verificarCuenta(cuenta, cuentas.get(0));
 
-		// loop through items in the database
-		int accountC = 0;
-		for (Account account2 : accountDao) {
-			verifyAccount(account, account2);
-			accountC++;
-		}
-		assertEquals("Should have found 1 account in for loop", 1, accountC);
+        // Recorremos los elementos en la base de datos
+        int cuentaC = 0;
+        for (Cuenta cuenta2 : daoCuenta) {
+            verificarCuenta(cuenta, cuenta2);
+            cuentaC++;
+        }
+        assertEquals("Deberíamos haber encontrado 1 cuenta en el bucle for", 1, cuentaC);
 
-		// construct a query using the QueryBuilder
-		QueryBuilder<Account, Integer> statementBuilder = accountDao.queryBuilder();
-		// shouldn't find anything: name LIKE 'hello" does not match our account
-		statementBuilder.where().like(Account.NAME_FIELD_NAME, "hello");
-		accounts = accountDao.query(statementBuilder.prepare());
-		assertEquals("Should not have found any accounts matching our query", 0, accounts.size());
+        // Construimos una consulta utilizando QueryBuilder
+        QueryBuilder<Cuenta, Integer> constructorDeDeclaracion = daoCuenta.queryBuilder();
+        // No deberíamos encontrar nada: name LIKE 'hello" no coincide con nuestra cuenta
+        constructorDeDeclaracion.where().like(Cuenta.NAME_FIELD_NAME, "hello");
+        cuentas = daoCuenta.query(constructorDeDeclaracion.prepare());
+        assertEquals("No deberíamos haber encontrado cuentas que coincidan con nuestra consulta", 0, cuentas.size());
 
-		// should find our account: name LIKE 'Jim%' should match our account
-		statementBuilder.where().like(Account.NAME_FIELD_NAME, name.substring(0, 3) + "%");
-		accounts = accountDao.query(statementBuilder.prepare());
-		assertEquals("Should have found 1 account matching our query", 1, accounts.size());
-		verifyAccount(account, accounts.get(0));
+        // debería encontrar nuestra cuenta: name LIKE 'Jim%' debería coincidir con nuestra cuenta
+        constructorDeDeclaracion.where().like(Cuenta.NAME_FIELD_NAME, nombre.substring(0, 3) + "%");
+        cuentas = daoCuenta.query(constructorDeDeclaracion.prepare());
+        assertEquals("Deberíamos haber encontrado 1 cuenta coincidente con nuestra consulta", 1, cuentas.size());
+        verificarCuenta(cuenta, cuentas.get(0));
 
-		// delete the account since we are done with it
-		accountDao.delete(account);
-		// we shouldn't find it now
-		assertNull("account was deleted, shouldn't find any", accountDao.queryForId(id));
-	}
+        // eliminamos la cuenta ya que hemos terminado con ella
+        daoCuenta.delete(cuenta);
+        // no deberíamos encontrarla ahora
+        assertNull("La cuenta fue eliminada, no deberíamos encontrar ninguna", daoCuenta.queryForId(id));
+    }
 
-	/**
-	 * Example of reading and writing a large(r) number of objects.
-	 */
-	private void readWriteBunch() throws Exception {
+    /**
+     * Ejemplo de lectura y escritura de un número grande de objetos.
+     */
+    private void leerEscribirLote() throws Exception {
 
-		Map<String, Account> accounts = new HashMap<String, Account>();
-		for (int i = 1; i <= 100; i++) {
-			String name = Integer.toString(i);
-			Account account = new Account(name);
-			// persist the account object to the database, it should return 1
-			accountDao.create(account);
-			accounts.put(name, account);
-		}
+        Map<String, Cuenta> cuentas = new HashMap<String, Cuenta>();
+        for (int i = 1; i <= 100; i++) {
+            String nombre = Integer.toString(i);
+            Cuenta cuenta = new Cuenta(nombre);
+            // persistimos el objeto de cuenta en la base de datos, debería devolver 1
+            daoCuenta.create(cuenta);
+            cuentas.put(nombre, cuenta);
+        }
 
-		// query for all items in the database
-		List<Account> all = accountDao.queryForAll();
-		assertEquals("Should have found same number of accounts in map", accounts.size(), all.size());
-		for (Account account : all) {
-			assertTrue("Should have found account in map", accounts.containsValue(account));
-			verifyAccount(accounts.get(account.getName()), account);
-		}
+        // consultamos todos los elementos en la base de datos
+        List<Cuenta> todas = daoCuenta.queryForAll();
+        assertEquals("Deberíamos haber encontrado el mismo número de cuentas en el mapa", cuentas.size(), todas.size());
+        for (Cuenta cuenta : todas) {
+            assertTrue("Deberíamos haber encontrado la cuenta en el mapa", cuentas.containsValue(cuenta));
+            verificarCuenta(cuentas.get(cuenta.getName()), cuenta);
+        }
 
-		// loop through items in the database
-		int accountC = 0;
-		for (Account account : accountDao) {
-			assertTrue("Should have found account in map", accounts.containsValue(account));
-			verifyAccount(accounts.get(account.getName()), account);
-			accountC++;
-		}
-		assertEquals("Should have found the right number of accounts in for loop", accounts.size(), accountC);
-	}
+        // recorremos los elementos en la base de datos
+        int cuentaC = 0;
+        for (Cuenta cuenta : daoCuenta) {
+            assertTrue("Deberíamos haber encontrado la cuenta en el mapa", cuentas.containsValue(cuenta));
+            verificarCuenta(cuentas.get(cuenta.getName()), cuenta);
+            cuentaC++;
+        }
+        assertEquals("Deberíamos haber encontrado el número correcto de cuentas en el bucle for", cuentas.size(), cuentaC);
+    }
 
-	/**
-	 * Example of created a query with a ? argument using the {@link SelectArg} object. You then can set the value of
-	 * this object at a later time.
-	 */
-	private void useSelectArgFeature() throws Exception {
+    /**
+     * Ejemplo de creación de una consulta con un argumento ? utilizando el objeto {@link SelectArg}. Luego puedes establecer el valor de este objeto en un momento posterior.
+     */
+    private void usarCaracteristicaSelectArg() throws Exception {
 
-		String name1 = "foo";
-		String name2 = "bar";
-		String name3 = "baz";
-		assertEquals(1, accountDao.create(new Account(name1)));
-		assertEquals(1, accountDao.create(new Account(name2)));
-		assertEquals(1, accountDao.create(new Account(name3)));
+        String nombre1 = "foo";
+        String nombre2 = "bar";
+        String nombre3 = "baz";
+        assertEquals(1, daoCuenta.create(new Cuenta(nombre1)));
+        assertEquals(1, daoCuenta.create(new Cuenta(nombre2)));
+        assertEquals(1, daoCuenta.create(new Cuenta(nombre3)));
 
-		QueryBuilder<Account, Integer> statementBuilder = accountDao.queryBuilder();
-		SelectArg selectArg = new SelectArg();
-		// build a query with the WHERE clause set to 'name = ?'
-		statementBuilder.where().like(Account.NAME_FIELD_NAME, selectArg);
-		PreparedQuery<Account> preparedQuery = statementBuilder.prepare();
+        QueryBuilder<Cuenta, Integer> constructorDeDeclaracion = daoCuenta.queryBuilder();
+        SelectArg selectArg = new SelectArg();
+        // construimos una consulta con la cláusula WHERE configurada en 'name = ?'
+        constructorDeDeclaracion.where().like(Cuenta.NAME_FIELD_NAME, selectArg);
+        PreparedQuery<Cuenta> consultaPreparada = constructorDeDeclaracion.prepare();
 
-		// now we can set the select arg (?) and run the query
-		selectArg.setValue(name1);
-		List<Account> results = accountDao.query(preparedQuery);
-		assertEquals("Should have found 1 account matching our query", 1, results.size());
-		assertEquals(name1, results.get(0).getName());
+        // ahora podemos establecer el argumento de selección (?) y ejecutar la consulta
+        selectArg.setValue(nombre1);
+        List<Cuenta> resultados = daoCuenta.query(consultaPreparada);
+        assertEquals("Deberíamos haber encontrado 1 cuenta coincidente con nuestra consulta", 1, resultados.size());
+        assertEquals(nombre1, resultados.get(0).getName());
 
-		selectArg.setValue(name2);
-		results = accountDao.query(preparedQuery);
-		assertEquals("Should have found 1 account matching our query", 1, results.size());
-		assertEquals(name2, results.get(0).getName());
+        selectArg.setValue(nombre2);
+        resultados = daoCuenta.query(consultaPreparada);
+        assertEquals("Deberíamos haber encontrado 1 cuenta coincidente con nuestra consulta", 1, resultados.size());
+        assertEquals(nombre2, resultados.get(0).getName());
 
-		selectArg.setValue(name3);
-		results = accountDao.query(preparedQuery);
-		assertEquals("Should have found 1 account matching our query", 1, results.size());
-		assertEquals(name3, results.get(0).getName());
-	}
+        selectArg.setValue(nombre3);
+        resultados = daoCuenta.query(consultaPreparada);
+        assertEquals("Deberíamos haber encontrado 1 cuenta coincidente con nuestra consulta", 1, resultados.size());
+        assertEquals(nombre3, resultados.get(0).getName());
+    }
 
-	/**
-	 * Example of created a query with a ? argument using the {@link SelectArg} object. You then can set the value of
-	 * this object at a later time.
-	 */
-	private void useTransactions(ConnectionSource connectionSource) throws Exception {
-		String name = "trans1";
-		final Account account = new Account(name);
-		assertEquals(1, accountDao.create(account));
+    /**
+     * Ejemplo de creación de una consulta con un argumento ? utilizando el objeto {@link SelectArg}. Luego puedes establecer el valor de este objeto en un momento posterior.
+     */
+    private void usarTransacciones(ConnectionSource fuenteDeConexion) throws Exception {
+        String nombre = "trans1";
+        final Cuenta cuenta = new Cuenta(nombre);
+        assertEquals(1, daoCuenta.create(cuenta));
 
-		TransactionManager transactionManager = new TransactionManager(connectionSource);
-		try {
-			// try something in a transaction
-			transactionManager.callInTransaction(new Callable<Void>() {
-				@Override
-				public Void call() throws Exception {
-					// we do the delete
-					assertEquals(1, accountDao.delete(account));
-					assertNull(accountDao.queryForId(account.getId()));
-					// but then (as an example) we throw an exception which rolls back the delete
-					throw new Exception("We throw to roll back!!");
-				}
-			});
-			fail("This should have thrown");
-		} catch (SQLException e) {
-			// expected
-		}
+        TransactionManager transactionManager = new TransactionManager(fuenteDeConexion);
+        try {
+            // intentamos algo en una transacción
+            transactionManager.callInTransaction(new Callable<Void>() {
+                @Override
+                public Void call() throws Exception {
+                    // hacemos la eliminación
+                    assertEquals(1, daoCuenta.delete(cuenta));
+                    assertNull(daoCuenta.queryForId(cuenta.getId()));
+                    // pero luego (como ejemplo) lanzamos una excepción que revierte la eliminación
+                    throw new Exception("¡Lanzamos para revertir!!");
+                }
+            });
+            fail("Esto debería haber lanzado una excepción");
+        } catch (SQLException e) {
+            // esperado
+        }
 
-		assertNotNull(accountDao.queryForId(account.getId()));
-	}
+        assertNotNull(daoCuenta.queryForId(cuenta.getId()));
+    }
 
-	/**
-	 * Verify that the account stored in the database was the same as the expected object.
-	 */
-	private void verifyDb(int id, Account expected) throws SQLException, Exception {
-		// make sure we can read it back
-		Account account2 = accountDao.queryForId(id);
-		if (account2 == null) {
-			throw new Exception("Should have found id '" + id + "' in the database");
-		}
-		verifyAccount(expected, account2);
-	}
+    /**
+     * Verificamos que la cuenta almacenada en la base de datos sea la misma que el objeto esperado.
+     */
+    private void verificarBaseDeDatos(int id, Cuenta esperada) throws SQLException, Exception {
+        // aseguramos de que podemos leerlo de nuevo
+        Cuenta cuenta2 = daoCuenta.queryForId(id);
+        if (cuenta2 == null) {
+            throw new Exception("Deberíamos haber encontrado id '" + id + "' en la base de datos");
+        }
+        verificarCuenta(esperada, cuenta2);
+    }
 
-	/**
-	 * Verify that the account is the same as expected.
-	 */
-	private static void verifyAccount(Account expected, Account account2) {
-		assertEquals("expected name does not equal account name", expected, account2);
-		assertEquals("expected password does not equal account name", expected.getPassword(), account2.getPassword());
-	}
+    /**
+     * Verificamos que la cuenta sea la misma que la esperada.
+     */
+    private static void verificarCuenta(Cuenta esperada, Cuenta cuenta2) {
+        assertEquals("El nombre esperado no es igual al nombre de la cuenta", esperada, cuenta2);
+        assertEquals("La contraseña esperada no es igual al nombre de la cuenta", esperada.getPassword(), cuenta2.getPassword());
+    }
 }

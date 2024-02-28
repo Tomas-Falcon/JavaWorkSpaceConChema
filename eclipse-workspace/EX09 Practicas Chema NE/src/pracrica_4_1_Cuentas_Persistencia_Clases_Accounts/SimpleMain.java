@@ -1,10 +1,6 @@
 package pracrica_4_1_Cuentas_Persistencia_Clases_Accounts;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -32,7 +28,7 @@ import com.j256.ormlite.table.TableUtils;
 public class SimpleMain {
 
     // Estamos utilizando la base de datos sqlite en memoria
-    private final static String URL_BASE_DE_DATOS = "jdbc:sqlite:bbdd.sqlite";
+    private final static String URL_BASE_DE_DATOS = "jdbc:sqlite:bbdd.ssqlite";
 
     private Dao<Cuenta, Integer> daoCuenta;
 

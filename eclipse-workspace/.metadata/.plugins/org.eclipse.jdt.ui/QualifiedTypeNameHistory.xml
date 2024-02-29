@@ -5,7 +5,6 @@
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.util.Properties"/>
-    <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="java.io.Console"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="java.io.RandomAccessFile"/>
@@ -41,4 +40,8 @@
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="sokets_Server_Connection.Cliente"/>
     <fullyQualifiedTypeName name="Practica_Cliente_Servidor_Multihilo_EV.Servidor"/>
+    <fullyQualifiedTypeName name="cifradoCesar.CifradorCesar"/>
+    <fullyQualifiedTypeName name="java.nio.file.FileSystemNotFoundException"/>
+    <fullyQualifiedTypeName name="javax.imageio.stream.FileImageInputStream"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
 </qualifiedTypeNameHistroy>

@@ -6,8 +6,13 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="//fail"/>
+		<item key="selection" value="portero1"/>
 		<list key="findhistory">
+			<item value="Portero1"/>
+			<item value="cantidad"/>
+			<item value="numeroArticulo"/>
+			<item value="Cuenta"/>
+			<item value="Pedido"/>
 			<item value="fail"/>
 			<item value="assertNull"/>
 			<item value="assertTrue"/>
@@ -17,14 +22,14 @@
 			<item value="getNombre"/>
 			<item value="NOMBRE_CAMPO"/>
 			<item value="Account"/>
-			<item value="Cuenta"/>
 			<item value="maximo"/>
-			<item value="minimo"/>
-			<item value="porcentaje"/>
-			<item value="Out"/>
-			<item value="Ou"/>
 		</list>
 		<list key="replacehistory">
+			<item value="portero1"/>
+			<item value="sexo"/>
+			<item value="nombre"/>
+			<item value="Portero"/>
+			<item value="Cliente"/>
 			<item value="//fail"/>
 			<item value="//assertNull"/>
 			<item value="//assertTrue"/>
@@ -35,8 +40,6 @@
 			<item value="NAME_FIELD_NAME"/>
 			<item value="Cuenta"/>
 			<item value="nMaximo"/>
-			<item value="nMinimo"/>
-			<item value="posicion"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

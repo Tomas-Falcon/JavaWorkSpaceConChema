@@ -21,7 +21,6 @@
     <fullyQualifiedTypeName name="java.lang.ThreadDeath"/>
     <fullyQualifiedTypeName name="java.util.Collection"/>
     <fullyQualifiedTypeName name="java.util.Collections"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="hipodromoLaZarzuela.ClaseCaballo"/>
     <fullyQualifiedTypeName name="ClaseConector"/>
     <fullyQualifiedTypeName name="Empleado"/>
@@ -44,4 +43,9 @@
     <fullyQualifiedTypeName name="java.nio.file.FileSystemNotFoundException"/>
     <fullyQualifiedTypeName name="javax.imageio.stream.FileImageInputStream"/>
     <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="Portero"/>
+    <fullyQualifiedTypeName name="com.j256.ormlite.stmt.QueryBuilder"/>
+    <fullyQualifiedTypeName name="javax.management.Query"/>
+    <fullyQualifiedTypeName name="com.j256.ormlite.stmt.Where"/>
 </qualifiedTypeNameHistroy>

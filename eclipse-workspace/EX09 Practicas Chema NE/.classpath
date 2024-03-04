@@ -10,5 +10,6 @@
 	<classpathentry kind="lib" path="C:/Users/Tomas/Desktop/h2-2.2.224.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Tomas/OneDrive - SM/Librerias JARs/ormlite-jdbc-6.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Tomas/OneDrive - SM/Librerias JARs/junit-4.13.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tomas/OneDrive - SM/Librerias JARs/commons-codec-1.15.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

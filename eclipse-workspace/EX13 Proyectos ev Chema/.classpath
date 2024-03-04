@@ -6,6 +6,10 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/Tomas/OneDrive - SM/Librerias JARs/ormlite-jdbc-6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tomas/OneDrive - SM/Librerias JARs/junit-4.13.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Tomas/OneDrive - SM/Librerias JARs/db4o-8.0.184.15484.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tomas/OneDrive - SM/Librerias JARs/sqlite-jdbc-3.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tomas/OneDrive - SM/Librerias JARs/mysql-connector-java-5.0.7-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

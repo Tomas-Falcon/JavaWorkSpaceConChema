@@ -48,4 +48,5 @@
     <fullyQualifiedTypeName name="com.j256.ormlite.stmt.QueryBuilder"/>
     <fullyQualifiedTypeName name="javax.management.Query"/>
     <fullyQualifiedTypeName name="com.j256.ormlite.stmt.Where"/>
+    <fullyQualifiedTypeName name="com.j256.ormlite.dao.ForeignCollection"/>
 </qualifiedTypeNameHistroy>

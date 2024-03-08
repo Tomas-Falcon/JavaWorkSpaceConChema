@@ -25,7 +25,6 @@
     <fullyQualifiedTypeName name="ClaseConector"/>
     <fullyQualifiedTypeName name="Empleado"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="Fabrica"/>
     <fullyQualifiedTypeName name="P2_2_Practica_CRUD_en_MySQL.Conecxion"/>
     <fullyQualifiedTypeName name="java.lang.UnknownError"/>
@@ -43,10 +42,12 @@
     <fullyQualifiedTypeName name="java.nio.file.FileSystemNotFoundException"/>
     <fullyQualifiedTypeName name="javax.imageio.stream.FileImageInputStream"/>
     <fullyQualifiedTypeName name="java.io.File"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="Portero"/>
     <fullyQualifiedTypeName name="com.j256.ormlite.stmt.QueryBuilder"/>
     <fullyQualifiedTypeName name="javax.management.Query"/>
     <fullyQualifiedTypeName name="com.j256.ormlite.stmt.Where"/>
     <fullyQualifiedTypeName name="com.j256.ormlite.dao.ForeignCollection"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="Zona"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

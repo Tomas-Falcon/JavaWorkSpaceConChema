@@ -6,8 +6,16 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="portero1"/>
+		<item key="selection" value="Query"/>
 		<list key="findhistory">
+			<item value="query"/>
+			<item value="queryfor"/>
+			<item value="all"/>
+			<item value="queryFo"/>
+			<item value="Porteros"/>
+			<item value="Cliente"/>
+			<item value="Flor"/>
+			<item value="Portero"/>
 			<item value="Portero1"/>
 			<item value="cantidad"/>
 			<item value="numeroArticulo"/>
@@ -15,16 +23,11 @@
 			<item value="Pedido"/>
 			<item value="fail"/>
 			<item value="assertNull"/>
-			<item value="assertTrue"/>
-			<item value="assertNotNull"/>
-			<item value="assertEquals"/>
-			<item value="getContraseña"/>
-			<item value="getNombre"/>
-			<item value="NOMBRE_CAMPO"/>
-			<item value="Account"/>
-			<item value="maximo"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Flor"/>
+			<item value="Zona"/>
+			<item value="Flores"/>
 			<item value="portero1"/>
 			<item value="sexo"/>
 			<item value="nombre"/>
@@ -37,9 +40,6 @@
 			<item value="//assertEquals"/>
 			<item value="getPassword"/>
 			<item value="getName"/>
-			<item value="NAME_FIELD_NAME"/>
-			<item value="Cuenta"/>
-			<item value="nMaximo"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
